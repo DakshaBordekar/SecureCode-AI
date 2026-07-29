@@ -1,19 +1,30 @@
 # SecureCode AI Frontend
 
-Interactive testing UI for the SecureCode AI hackathon project.
+Presentation-ready, dependency-free investigation console for the SecureCode AI
+hackathon project. The prototype is implemented with semantic HTML, modern CSS,
+and vanilla JavaScript modules.
 
 ## Run locally
 
-Open `index.html` directly in a browser. No installation or build step is
-required.
+Serve the branch with any static HTTP server so JavaScript modules load
+correctly. No installation or build step is required.
+
+```powershell
+python -m http.server 4173 --bind 127.0.0.1
+```
+
+Then open `http://127.0.0.1:4173/`.
 
 ## Prototype flow
 
-1. Review repository security scores on the overview.
-2. Start a new scan and watch the agent workflow progress.
-3. Inspect verified findings and compare vulnerable code with the proposed fix.
-4. Accept or reject patches to create feedback.
-5. View the model improvement dashboard.
+1. Inspect the repository fingerprint in Mission Control.
+2. Begin a live repository scan and watch five agents hand off work.
+3. Follow the confirmed SQL injection attack path from input to impact.
+4. Review evidence-rich casefiles for four vulnerability types.
+5. Compare, edit, accept, or reject the proposed line-by-line patch.
+6. Run five sequential verification gates and improve the security score.
+7. See the developer decision become a structured model-learning signal.
 
-This branch currently uses realistic mock data so the frontend flow can be
-tested before the backend and AI services are connected.
+Mock data lives in `mock-data.js`; asynchronous scan, verification, and feedback
+behavior lives behind functions in `services.js` so real APIs can replace the
+simulation later.
